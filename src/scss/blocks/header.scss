@@ -51,6 +51,11 @@
     font-size: 13px;
     font-weight: 700;
     border: 1px solid white;
+
+    @include hover {
+      background-color: white;
+      color: black;
+    }
   }
 }
 

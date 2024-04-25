@@ -1,0 +1,131 @@
+@use '../mixins/hover.scss' as *;
+@use '../mixins/responsive.scss' as *;
+
+.header {
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 24px;
+    z-index: 1;
+    background-color: #fff;
+    height: 80px;
+
+    @include responsive(tablet) {
+      padding-inline: 50px;
+      z-index: 0;
+    }
+  }
+
+  &__info {
+    width: 375px;
+    height: 500px;
+    background-color: #2d2641;
+    text-align: center;
+    padding: 93px 24px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -0.67px;
+    color: white;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.668);
+    margin: 0;
+  }
+
+  &__button {
+    position: relative;
+    top: 32px;
+    padding: 13px 28px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid white;
+  }
+}
+
+.menu {
+  position: absolute;
+  width: 375px;
+  height: 587px;
+  background-color: #2c2830;
+  padding-top: 40px;
+  padding-inline: 24px;
+  text-align: center;
+  background-image: url(../../assets/bg-pattern-mobile-nav.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  translate: 0 -150%;
+  transition: translate 1s;
+  top: 80px;
+
+  @include responsive(tablet) {
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    top: -40px;
+    left: 300px;
+    translate: 0 0;
+    width: 100%;
+    gap: 25px;
+    background-image: none;
+  }
+
+  &__item {
+    margin-top: 20px;
+  }
+
+  &__link {
+    letter-spacing: 1.36px;
+    font-weight: 700px;
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    font-family: 'Karla', sans-serif;
+
+    @include responsive(tablet) {
+      color: #837d88;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @include hover {
+      color: black;
+    }
+  }
+
+  &__link--border {
+    padding: 10px 80px;
+    border: 1px solid rgb(255, 255, 255);
+
+    @include responsive(tablet) {
+      padding-inline: 12px;
+      border: 1px solid black;
+    }
+    @include hover {
+      color: white;
+      background-color: black;
+    }
+  }
+}
+
+.button-menu {
+  @include responsive(tablet) {
+    display: none;
+  }
+}
+
+.show {
+  translate: 0 0;
+}

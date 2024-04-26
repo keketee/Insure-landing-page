@@ -2,6 +2,7 @@
 @use '../mixins/responsive.scss' as *;
 
 .header {
+  position: relative;
   &__menu {
     display: flex;
     justify-content: center;
@@ -12,7 +13,7 @@
     background-color: #fff;
     height: 80px;
 
-    @include responsive(tablet) {
+    @include responsive(laptop) {
       padding-inline: 50px;
       z-index: 0;
     }
@@ -24,6 +25,19 @@
     background-color: #2d2641;
     text-align: center;
     padding: 93px 24px;
+
+    @include responsive(laptop) {
+      width: 1440px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      padding: 160px 735px 127px 165px;
+      text-align: left;
+      background-image: url(../../assets/bg-pattern-intro-right-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
   }
 
   &__title {
@@ -74,7 +88,7 @@
   transition: translate 1s;
   top: 80px;
 
-  @include responsive(tablet) {
+  @include responsive(laptop) {
     position: absolute;
     background-color: transparent;
     display: flex;
@@ -85,6 +99,7 @@
     width: 100%;
     gap: 25px;
     background-image: none;
+    left: 900px;
   }
 
   &__item {
@@ -114,7 +129,7 @@
     padding: 10px 80px;
     border: 1px solid rgb(255, 255, 255);
 
-    @include responsive(tablet) {
+    @include responsive(laptop) {
       padding-inline: 12px;
       border: 1px solid black;
     }
@@ -125,12 +140,67 @@
   }
 }
 
+.header::after {
+  position: absolute;
+  content: '';
+  width: 485px;
+  height: 453px;
+  top: 530px;
+  background-image: url(../../assets/bg-pattern-intro-left-mobile.svg);
+  background-repeat: no-repeat;
+
+  @include responsive(laptop) {
+    background-image: url(../../assets/bg-pattern-intro-left-desktop.svg);
+    top: 400px;
+    left: -40px;
+    width: 697px;
+    height: 649px;
+  }
+}
+
+.header::before {
+  position: absolute;
+  content: '';
+  width: 485px;
+  height: 453px;
+  top: 880px;
+  left: 250px;
+  background-image: url(../../assets/bg-pattern-intro-right-mobile.svg);
+  background-repeat: no-repeat;
+
+  @include responsive(laptop) {
+    background-image: none;
+  }
+}
+
 .button-menu {
-  @include responsive(tablet) {
+  @include responsive(laptop) {
     display: none;
   }
 }
 
 .show {
   translate: 0 0;
+}
+
+.image__intro {
+  @include responsive(laptop) {
+    position: absolute;
+    top: 185px;
+    right: 150px;
+  }
+}
+
+.line {
+  width: 150px;
+  height: 1px;
+  background-color: #c396c6;
+  margin-top: 150px;
+  margin-inline: auto;
+
+  @include responsive(laptop) {
+    position: absolute;
+    top: 30px;
+    left: 160px;
+  }
 }

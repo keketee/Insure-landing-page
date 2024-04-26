@@ -45,7 +45,21 @@
           </li>
         </ul>
       </nav>
-      <img src="./assets/image-intro-mobile.jpg" alt="logo-intro" />
+      <picture>
+        <source
+          media="(min-width: 768px)"
+          srcset="./assets/image-intro-desktop.jpg"
+        />
+        <source
+          media="(min-width: 360px)"
+          srcset="./assets/image-intro-mobile.jpg"
+        />
+        <img
+          class="image__intro"
+          src="./assets/image-intro-mobile.jpg"
+          alt="logo-intro"
+        />
+      </picture>
 
       <div class="header__info">
         <h2 class="header__title">Humanizing your insurance.</h2>
@@ -56,8 +70,55 @@
         </p>
         <a class="header__button" href="#">VIEW PLANS</a>
       </div>
+      <div class="line"></div>
     </header>
+    <main class="main">
+      <h2 class="main__title">We’re different</h2>
+      <div class="main__container">
+        <div class="main__info">
+          <img
+            class="main__image"
+            src="./assets/icon-snappy-process.svg"
+            alt=""
+          />
+          <h2 class="main__title--small">Snappy Process</h2>
+          <p class="main__text">
+            Our application process can be completed in minutes, not hours.
+            Don’t get stuck filling in tedious forms.
+          </p>
+        </div>
 
+        <div class="main__info">
+          <img
+            class="main__image"
+            src="./assets/icon-affordable-prices.svg"
+            alt=""
+          />
+          <h2 class="main__title--small">Affordable Prices</h2>
+          <p class="main__text">
+            We don’t want you worrying about high monthly costs. Our prices may
+            be low, but we still offer the best coverage possible.
+          </p>
+        </div>
+
+        <div class="main__info">
+          <img
+            class="main__image"
+            src="./assets/icon-people-first.svg"
+            alt=""
+          />
+          <h2 class="main__title--small">People First</h2>
+          <p class="main__text">
+            Our plans aren’t full of conditions and clauses to prevent payouts.
+            We make sure you’re covered when you need it.
+          </p>
+        </div>
+      </div>
+    </main>
+    <div class="container">
+      <p class="container__text">Find out more about how we work</p>
+      <a class="container__button" href="#">HOW WE WORK</a>
+    </div>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

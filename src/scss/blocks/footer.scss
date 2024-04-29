@@ -1,0 +1,120 @@
+@use '../mixins/hover.scss' as *;
+@use '../mixins/responsive.scss' as*;
+
+
+
+.footer{
+    width: 375px;
+    height: 1025px;
+    background-color: #FAFAFA;
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 88px;
+    background-image: url(../../assets/bg-pattern-footer-mobile.svg);
+    background-repeat: no-repeat;
+
+    @include responsive(laptop){
+        width: 1440px;
+        height: 393px;
+        background-image:url(../../assets/bg-pattern-footer-desktop.svg) ;
+        background-repeat: no-repeat;
+        
+
+    }
+
+    &__container-logos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include responsive(laptop){
+            display: flex;
+            flex-direction: row;
+            gap: 854px;
+        }
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+
+        @include responsive(laptop){
+            display: flex;
+            flex-direction: row;
+         gap: 250px;
+            
+        }
+    }
+    
+    
+    
+    &__logos{
+        display: flex;
+        margin-top: 32px;
+        gap: 16px;
+
+
+        @include responsive(laptop){
+            margin: 0;
+        }
+
+    }
+
+    &__line{
+        width: 327px;
+        height: 1px;
+        background-color: #979797;
+        margin-top: 40px;
+
+        @include responsive(laptop){
+            width:1100px ;
+            height: 1px;
+            
+        }
+
+        
+        
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include responsive(laptop){
+            justify-content: start;
+            align-items: start;
+        }
+    }
+
+&__title{
+    font-size: 13px;
+    font-weight: 700;
+    color: #837D88;
+    margin-bottom: 36px;
+    margin-top: 40px;
+}
+
+&__links{
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #837D88;
+    margin-bottom: 16px;
+
+    @include hover{
+        color: black;
+        border-bottom: 1px solid black;
+    }
+    
+}
+
+}
+
+.image__logos{
+    @include hover{
+        filter: invert(11%) sepia(18%) saturate(563%) hue-rotate(227deg) brightness(0%) contrast(100%);
+    }
+
+}
